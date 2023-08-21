@@ -27,17 +27,23 @@ const YourComponent = () => {
   };
 
   return (
+    
     <div>
-      <h1>API Data Example</h1>
-      <div>
+        <div className="App">
+      <h1>Search Employee</h1>
+      <div className="search-container">
         <input
-          type="number"
-          placeholder="Search by ID"
+          type="text"
+          className="search-input"
+          placeholder="Search..."
           value={searchTerm}
-          onChange={e => setSearchTerm(e.target.value)}
+          onChange={event => setSearchTerm(event.target.value)}
         />
-        <button onClick={handleSearch}>Search</button>
+        <button className="search-button" onClick={handleSearch}>
+          <img src="/searchlogo.png" alt="Logo" className="logo" />
+        </button>
       </div>
+    </div>
       {searchedEmployee ? (
         <div className="employee-card">
         <div className="employee-image">
